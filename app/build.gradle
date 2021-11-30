@@ -11,6 +11,7 @@ android {
     defaultConfig {
         applicationId "com.netguru.codereview"
         minSdkVersion 21
+        //TODO: Stable API 31 is available. Consider testing the app on that api as well and change the target version
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -20,6 +21,7 @@ android {
 
     buildTypes {
         release {
+            //TODO: Why set to false? minifyEnabled is here to obfuscate the code. Proguard rules are provided so setting minifyEnabled to true won't cause a runtime crash
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -36,6 +38,7 @@ android {
 dependencies {
     implementation project(":shoplist")
 
+    //TODO: Almost for all libraries is available a new version. Can you update them?
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'

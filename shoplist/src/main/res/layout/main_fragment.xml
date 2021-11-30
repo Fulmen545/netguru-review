@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp">
 
+    <!-- TODO: never write text in a layout file. Use strings.xml  -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"

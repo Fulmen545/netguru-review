@@ -34,6 +34,9 @@ class MainViewModel : ViewModel() {
 
     fun events(): LiveData<String> = eventLiveData
     private fun getUpdateEvents() {
+        /*TODO: Avoid using GlobalScope. Rather use CoroutineScope (in this case viewModelScope)
+            Learn more: https://developer.android.com/kotlin/coroutines/coroutines-best-practices#global-scope
+         */
         GlobalScope.launch {
             shopListRepository.updateEvents().collect {
                 eventLiveData.postValue(it)
